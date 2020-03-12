@@ -14,10 +14,10 @@ class VehicleDisplay extends StatefulWidget {
 
 class VehicleDisplayState extends State<VehicleDisplay> {
   // instance variables
-  Vehicle _vehicle;
+  Vehicle vehicle;
 
   // constructor
-  VehicleDisplayState(this._vehicle);
+  VehicleDisplayState(this.vehicle);
 
   // build
   @override
@@ -33,18 +33,18 @@ class VehicleDisplayState extends State<VehicleDisplay> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Spacer(),
-            Text(_vehicle.name, style: TextStyle(fontSize: 50),),
+            Text(vehicle.name, style: TextStyle(fontSize: 50),),
             Spacer(),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
 
                 Row(
-                  children: <Widget>[ Icon(Icons.person_pin), Text(_vehicle.currentCapacity.toString()) ],
+                  children: <Widget>[ Icon(Icons.person_pin), Text(vehicle.currentCapacity.toString()) ],
                 ),
 
                 Row(
-                  children: <Widget>[ Icon(Icons.person, color: Colors.grey,), Text(_vehicle.maxCapacity.toString(), style: TextStyle(color: Colors.grey),) ],
+                  children: <Widget>[ Icon(Icons.person, color: Colors.grey,), Text(vehicle.maxCapacity.toString(), style: TextStyle(color: Colors.grey),) ],
                 )
 
               ],
@@ -57,4 +57,9 @@ class VehicleDisplayState extends State<VehicleDisplay> {
       ),
     );
   }
+
+  @override
+  bool operator ==(other) => other is VehicleDisplay && other.state.vehicle == vehicle;
+
+
 }

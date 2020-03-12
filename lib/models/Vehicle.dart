@@ -8,4 +8,10 @@ class Vehicle {
 
   // setters
   void setName(String newName) { name = newName; }
+
+  @override
+  String toString() {
+    return 'Vehicle{name: $name}';
+  }
+
 }

@@ -8,6 +8,8 @@ class VehiclePage extends StatefulWidget {
   // constructor
   VehiclePage({Vehicle vehicle, Key key}) : super(key: key) { state = VehiclePageState(vehicle); }
   @override VehiclePageState createState() => state;
+
+
 }
 
 class VehiclePageState extends State<VehiclePage> {
